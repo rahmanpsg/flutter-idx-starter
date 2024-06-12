@@ -43,6 +43,7 @@
         create-venv = ''
           python -m venv .venv
           source .venv/bin/activate
+          pip install aider
         '';
       };
       # Runs when the workspace is (re)started
