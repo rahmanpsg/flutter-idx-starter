@@ -27,6 +27,10 @@
           source .venv/bin/activate
           pip install aider
         '';
+        install-stacked-cli = ''
+        flutter pub get
+        dart pub global activate stacked_cli
+        '';
         build-flutter = ''
           cd /home/user/myapp/android
 
