@@ -25,7 +25,7 @@
         create-venv = ''
           python -m venv .venv
           source .venv/bin/activate
-          pip install aider
+          pip install aider-chat
         '';
         install-stacked-cli = ''
         flutter pub get
@@ -57,6 +57,10 @@
       };
       
       # To run something each time the workspace is (re)started, use the `onStart` hook
+    onStart = {
+        export-flutter = ''
+          export PATH="$PATH":"$HOME/.pub-cache/bin"
+          '';
     };
     # Enable previews and customize configuration
     previews = {
